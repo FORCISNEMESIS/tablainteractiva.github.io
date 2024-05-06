@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculadora de Masa Molecular</title>
+    <style>
+      #particles-js{
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: -1;
+      }
+    </style>
+    <style>
+      body {
+        position: relative;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 60px;
+        /*background-image: linear-gradient(
+      175deg,
+      #ffffff 0,
+      #ffffff 16.67%,
+      #ffffff 33.33%,
+      #f3f3f3 50%,
+      #d9e4e0 66.67%,
+      #c3d6ce 83.33%,
+      #b1c9bd 100%
+  );*/
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to bottom,
+         
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to bottom,
+        
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        width: auto;
+        height: 100vh;
+      }
+      header{
+        position: relative;
+        top: -15%;
+      
+      }
+      h1 {
+        color: #f80e0e;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+      }
+
+      input[type="text"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      #result {
+        margin-top: 20px;
+      }
+
+      #elementData {
+        margin-top: 20px;
+        position: relative;
+      }
+    </style>
+    <link rel="stylesheet" href="/calculadora_masa_molecular/styles.css">
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <script src="/calculadora_masa_molecular/particles.min.js"></script>
+    <script src="/calculadora_masa_molecular/part.js"></script>
+    <header class="header">
+      <div class="logo">
+
+      </div>
+      <nav>
+         <ul class="nav-links">
+              <li><a href="/tabla_periodica/tabperio.html">Tabla</a></li>
+              <li><a href="/configuracion_electronica/Confielec.html">Configuracion</a></li>
+              
+         </ul>            
+      </nav>
+      <a class="btn" href="/index.html"><button>Menu</button></a>
+
+<!---->        <a onclick="openNav()" class="menu" href="#"><button>Menu</button></a>
+
+<!---->        <div id="mobile-menu" class="overlay">
+<!---->            <a onclick="closeNav()" href="" class="close">&times;</a>
+<!---->            <div class="overlay-content">
+<!---->                <a href="/index.html">Menu</a>
+<!---->                <a href="/tabla_periodica/tabperio.html">Tabla</a>
+<!---->                <a href="/configuracion_electronica/Confielec.html">Configuracion</a>
+<!---->                
+<!---->            </div>
+<!---->        </div>
+
+  </header>
+<!---->    <script type="text/javascript" src="/calculadora_masa_molecular/nav.js"></script>
+    <h1><center>Calculadora de Masa Molecular</center></h1>
+    <form id="molecularMassCalculator">
+      <label for="molecularFormula">Fórmula Química:</label>
+      <input
+        type="text"
+        id="molecularFormula"
+        name="molecularFormula"
+        required
+      />
+      <button type="button" onclick="calculateMolecularMass()">Calcular</button>
+
+      <table id="elementData">
+        <tr>
+          <th>Nº átomos</th>
+          <th>Átomo</th>
+          <th>Masa atómica relativa (g/mol)</th>
+          <th>Fracción másica (%)</th>
+          <th>Masa del elemento (g/mol)</th>
+        </tr>
+      </table>
+
+      <label for="molarMass">Masa molar (M):</label>
+      <input type="text" id="molarMass" name="molarMass" readonly /> (g/mol)
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+      function calculateMolecularMass() {
+        const compuesto = document.getElementById("molecularFormula").value;
+        const elementos = {
+          H: 1.008,
+          He: 4.0026,
+          Li: 6.94,
+          Be: 9.0122,
+          B: 10.811,
+          C: 12.011,
+          N: 14.006,
+          O: 15.999,
+          F: 18.998,
+          Ne: 20.183,
+          Na: 22.989,
+          Mg: 24.312,
+          Al: 26.981,
+          Si: 28.086,
+          P: 30.973,
+          S: 32.064,
+          Cl: 35.453,
+          Ar: 39.948,
+          K: 39.102,
+          Ca: 40.08,
+          Sc: 44.956,
+          Ti: 47.9,
+          V: 50.942,
+          Cr: 51.966,
+          Mn: 54.938,
+          Fe: 55.847,
+          Co: 58.933,
+          Ni: 58.71,
+          Cu: 63.54,
+          Zn: 65.37,
+          Ga: 69.72,
+          Ge: 72.59,
+          As: 74.922,
+          Se: 78.96,
+          Br: 79.909,
+          Kr: 83.8,
+          Rb: 85.47,
+          Sr: 87.62,
+          Y: 88.905,
+          Zr: 91.22,
+          Nb: 92.906,
+          Mo: 95.94,
+          Tc: 98,
+          Ru: 101.07,
+          Rh: 102.9,
+          Pd: 106.4,
+          Ag: 107.87,
+          Cd: 112.4,
+          In: 114.82,
+          Sn: 118.69,
+          Sb: 121.75,
+          Te: 127.6,
+          I: 126.9,
+          Xe: 131.3,
+          Cs: 132.9,
+          Ba: 137.34,
+          La: 138.91,
+          Ce: 140.12,
+          Pr: 140.9,
+          Nd: 144.24,
+          Pm: 147,
+          Sm: 150.35,
+          Eu: 151.96,
+          Gd: 157.25,
+          Tb: 158.92,
+          Dy: 162.5,
+          Ho: 164.93,
+          Er: 167.26,
+          Tm: 168.93,
+          Yb: 173.04,
+          Lu: 174.97,
+          Hf: 178.49,
+          Ta: 180.94,
+          W: 183.85,
+          Re: 186.2,
+          Os: 190.2,
+          Ir: 192.2,
+          Pt: 195.09,
+          Au: 196.96,
+          Hg: 200.59,
+          Tl: 204.37,
+          Pb: 207.19,
+          Bi: 208.98,
+          Po: 210,
+          At: 210,
+          Rn: 222,
+          Fr: 223,
+          Ra: 226,
+          Ac: 227,
+          Th: 232.03,
+          Pa: 231,
+          U: 238.03,
+          Nb: 237,
+          Pu: 242,
+          Am: 243,
+          Cm: 247,
+          Bk: 247,
+          Cl: 249,
+          Es: 254,
+          Fm: 253,
+          Md: 256,
+          Nb: 254,
+          Lw: 257,
+          Ku: 261,
+          Ha: 262,
+          Nt: 263,
+          Gp: 264,
+          Hr: 265,
+          Wl: 266,
+          Mv: 269,
+          Pl: 272,
+          Da: 270,
+          Tf: 272,
+          Eo: 276,
+          Me: 279,
+          Nc: 282,
+          El: 286,
+          On: 288,
+        };
+
+        let pesoMolecular = 0;
+        let regex = /([A-Z][a-z]*)(\d*)/g;
+        let match;
+
+        let elementDataHtml =
+          "<tr><th>Nº átomos</th><th>Átomo</th><th>Masa atómica relativa (g/mol)</th><th>Fracción másica (%)</th><th>Masa del elemento (g/mol)</th></tr>";
+
+        while ((match = regex.exec(compuesto)) !== null) {
+          let elemento = match[1];
+          let cantidad = match[2] === "" ? 1 : parseInt(match[2]);
+
+          if (elementos.hasOwnProperty(elemento)) {
+            pesoMolecular += elementos[elemento] * cantidad;
+          } else {
+            alert("Elemento químico desconocido: " + elemento);
+            return;
+          }
+        }
+
+        // Calcular la fracción másica para cada elemento
+        let totalFraccionMasica = 0;
+        regex = /([A-Z][a-z]*)(\d*)/g;
+        while ((match = regex.exec(compuesto)) !== null) {
+          let elemento = match[1];
+          let cantidad = match[2] === "" ? 1 : parseInt(match[2]);
+          let masaElemento = elementos[elemento] * cantidad;
+          let fraccionMasica = (masaElemento / pesoMolecular) * 100;
+          totalFraccionMasica += fraccionMasica;
+          elementDataHtml += `<tr><td>${cantidad}</td><td>${elemento}</td><td>${
+            elementos[elemento]
+          }</td><td>${fraccionMasica.toFixed(2)}</td><td>${masaElemento.toFixed(
+            2
+          )}</td></tr>`;
+        }
+
+        // Asegurarse de que la suma de las fracciones masicas sea 100%
+        if (totalFraccionMasica.toFixed(2) !== "100.00") {
+          alert("La suma de las fracciones másicas no es igual a 100%.");
+          return;
+        }
+
+        document.getElementById("molarMass").value = pesoMolecular.toFixed(2);
+        document.getElementById("elementData").innerHTML = elementDataHtml;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <title>Calculadora de Configuración Electrónica</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport" />
+    <meta name="google-site-verification" content="FbOTNeVr2ratrdYGifrSce4C71l207P9Ov6l1rUc1fw" />
+    <meta
+      name="Description"
+      content="Calculá la configuración electrónica (CE y CEE) de un elemento químico a partir del número de electrones."
+    />
+    <link rel="stylesheet" href="Confielec.css" />
+    <link rel="stylesheet" href="/configuracion_electronica/styles.css">
+    <script>
+      const lang = {
+        open: "Escribe el número electronico del átomo para calcular su CE en estado fundamental entre 1 y 118",
+        group: "Grupo",
+        period: "Período",
+        not_in_table: "No existe en la tabla",
+        the_element_with: "El elemento con",
+        doesnt_exist: "Electrones no existe en estado fundamental o no fue descubierto aún",
+        irregular: "Electrones tiene CE irregular",
+        limit: "El número de electrones debe estar entre 1 y 118",
+      };
+
+    
+      function getElementName(z) {
+        const elementName = elementname[z] || "";
+        document.getElementById("elementName").textContent = elementName;
+
+        const fontSize = "35px"; // Define el tamaño del texto que deseas
+        const fontFamily = "Arial, sans-serif";
+        // Aplica el tamaño del texto al elemento con ID "elementName"
+        const elementNameElement = document.getElementById("elementName");
+        elementNameElement.textContent = elementName;
+        elementNameElement.style.fontSize = fontSize;
+        elementNameElement.style.fontFamily = fontFamily;
+
+        return elementName;
+      }
+    </script>
+    <style>
+      #particles-js{
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        z-index: -1;
+      }
+    </style>
+    <script defer type="text/javascript" src="js/Confielec.js"></script>
+  </head>
+  
+  <body>
+    <header class="header">
+      <div class="logo">
+
+      </div>
+      <nav>
+         <ul class="nav-links">
+              <li><a href="/tabla_periodica/tabperio.html">Tabla</a></li>
+              <li><a href="/calculadora_masa_molecular/calmamol.html">Calculadora</a></li>
+              
+         </ul>            
+      </nav>
+      <a class="btn" href="/index.html"><button>Menu</button></a>
+
+<!---->        <a onclick="openNav()" class="menu" href="#"><button>Menu</button></a>
+
+<!---->        <div id="mobile-menu" class="overlay">
+<!---->            <a onclick="closeNav()" href="" class="close">&times;</a>
+<!---->            <div class="overlay-content">
+<!---->                <a href="/index.html">Menu</a>
+<!---->                <a href="/tabla_periodica/tabperio.html">Tabla</a>
+<!---->                <a href="/calculadora_masa_molecular/calmamol.html">Calculadora</a>
+<!---->                
+<!---->            </div>
+<!---->        </div>
+
+  </header>
+
+
+<!---->    <script type="text/javascript" src="/configuracion_electronica/nav.js"></script>
+    <div id="particles-js"></div>
+    <script src="js/particles.min.js"></script>
+    <script src="js/part.js"></script>
+    <div class="inputs">
+      <input
+        id="inputZ"
+        class="z"
+        type="number"
+        name="Z"
+        placeholder="Número electronico"
+        min="1"
+        max="560"
+        oninput="calculate()"
+      />
+      
+    </div>
+    <div class="outputs">
+      <p id="output-ce"></p>
+      <p id="output-cee"></p>
+      <p id="output-pt"></p>
+      <p id="message"></p>
+       <p id="elementName"></p>
+</html>

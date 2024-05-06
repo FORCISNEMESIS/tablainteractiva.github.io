@@ -1,0 +1,811 @@
+body{
+  /*background-image: linear-gradient(
+      175deg,
+      #ffffff 0,
+      #ffffff 16.67%,
+      #ffffff 33.33%,
+      #f3f3f3 50%,
+      #d9e4e0 66.67%,
+      #c3d6ce 83.33%,
+      #b1c9bd 100%
+  );*/
+  background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: auto;
+  height: 100vh;
+  
+}
+
+.conjuntotabla{
+  justify-content: center;
+  align-items: center;
+}
+
+#titulo{
+  color: white;
+  /*background-color: #2d295563;*/
+  text-align: center;
+  padding: 10px;
+  height: 90px;
+  border-radius: 15px;
+
+}
+
+.periodic-table {
+    color: #070101;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(18, 65.4px); 
+    grid-gap: 0px; 
+    margin-top: 100px;
+   
+  }
+  
+  .element {
+    background-color: #f7f8f8;
+    border: 1px solid #0f130fc4;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    transition: transform 250ms;
+   
+  }
+
+  .element:hover{
+    transform: scale(1.6); 
+    border-radius: 5px;
+  }
+
+  .propieds{
+    background: transparent;
+    backdrop-filter: blur(10px);
+    height: 200px;
+    width: 200px;
+    border: 1px solid gray;
+    border-radius: 8px;
+  }
+  
+  /* Hidrógeno a Helio */
+  #hydrogen {
+    grid-column: 1 / span 1;
+    color: #000000;
+    background-color:  #004a94;
+  }
+
+
+
+  
+  #helium {
+    grid-column: 18 / span 1;
+    background-color: #04f9f0;
+  }
+  
+  /* Li a Ne 
+  litio*/
+  #lithium {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    background-color:  #ff7c00 ;
+  }
+  
+  /*berilio*/
+  #beryllium {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    background-color: hwb(50 14% 2%);
+  }
+  
+  #boron {
+    grid-column: 13 / span 1;
+    grid-row: 2 / span 1;
+    background-color:  #04ff00;
+  }
+  
+  /*carbono*/
+  #carbon {
+    grid-column: 14 / span 1;
+    grid-row: 2 / span 1;
+    background-color: #004a94;
+  }
+  
+  /*nitrogeno*/
+  #nitrogen {
+    grid-column: 15 / span 1;
+    grid-row: 2 / span 1;
+    background-color: #004a94;
+  }
+  
+  /*oxigeno*/
+  #oxygen {
+    grid-column: 16 / span 1;
+    grid-row: 2 / span 1;
+    background-color: #004a94;
+  }
+  
+  #fluorine {
+    grid-column: 17 / span 1;
+    grid-row: 2 / span 1;
+    background-color:  #fa4bf5;
+  }
+  
+  #neon {
+    grid-column: 18 / span 1;
+    grid-row: 2 / span 1;
+    background-color: #04f9f0;
+  }
+  
+  /* Na a Kr 
+  sodio*/
+  #sodium {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+    background-color:  #ff7c00;
+  }
+  
+  /*magnesio*/
+  #magnesium {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+    background-color: hwb(50 14% 2%);
+  }
+  
+  #aluminum {
+    grid-column: 13 / span 1;
+    grid-row: 3 / span 1;
+    background-color:  #fdfd03;
+  }
+  
+  #silicon {
+    grid-column: 14 / span 1;
+    grid-row: 3 / span 1;
+    background-color:  #04ff00;
+  }
+  
+  /*fosforo*/
+  #phosphorus {
+    grid-column: 15 / span 1;
+    grid-row: 3 / span 1;
+    background-color: #004a94;
+  }
+  
+  /*azufre*/
+  #sulfur {
+    grid-column: 16 / span 1;
+    grid-row: 3 / span 1;
+    background-color: #004a94;
+  }
+  
+  #chlorine {
+    grid-column: 17 / span 1;
+    grid-row: 3 / span 1;
+    background-color:  #fa4bf5;
+    
+  }
+  
+  #argon {
+    grid-column: 18 / span 1;
+    grid-row: 3 / span 1;
+    background-color: #04f9f0;
+  }
+  
+  /* K a Xe 
+  potasio*/
+  #potassium {
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 1;
+    background-color:  #ff7c00;
+  }
+  
+  /*calcio*/
+  #calcium {
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+    background-color: hwb(50 14% 2%);
+  }
+  
+  /*escandio*/
+  #scandium {
+    grid-column: 3 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #adf903;
+  }
+  
+  /*titanio*/
+  #titanium {
+    grid-column: 4 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #adf903;
+  }
+  
+  /*vanadio*/
+  #vanadium {
+    grid-column: 5 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #adf903;
+  }
+  
+  #chromium {
+    grid-column: 6 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #adf903;
+  }
+  
+  #manganese {
+    grid-column: 7 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #adf903;
+  }
+  
+  #iron {
+    grid-column: 8 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #adf903;
+  }
+  
+  #cobalt {
+    grid-column: 9 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #adf903;
+  }
+  
+  #nickel {
+    grid-column: 10 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #adf903;
+  }
+  
+  #copper {
+    grid-column: 11 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #adf903;
+  }
+  
+  #zinc {
+    grid-column: 12 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #adf903;
+  }
+  
+  #gallium {
+    grid-column: 13 / span 1;
+    grid-row: 4 / span 1;
+    background-color:  #fdfd03;
+  }
+  
+  #germanium {
+    grid-column: 14 / span 1;
+    grid-row: 4 / span 1;
+    background-color:  #04ff00;
+  }
+  
+  #arsenic {
+    grid-column: 15 / span 1;
+    grid-row: 4 / span 1;
+    background-color:  #04ff00;
+  }
+  
+  /*selenio*/
+  #selenium {
+    grid-column: 16 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #004a94;
+  }
+  
+  #bromine {
+    grid-column: 17 / span 1;
+    grid-row: 4 / span 1;
+    background-color:  #fa4bf5;
+  }
+  
+  #krypton {
+    grid-column: 18 / span 1;
+    grid-row: 4 / span 1;
+    background-color: #04f9f0;
+  }
+  
+  /* Rb a Rn 
+  rubidio*/
+  #rubidium {
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 1;
+    background-color:  #ff7c00;
+  }
+  
+  /*estroncio*/
+  #strontium {
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
+    background-color: hwb(50 14% 2%);
+  }
+  
+  #yttrium {
+    grid-column: 3 / span 1;
+    grid-row: 5 / span 1;
+    background-color: #adf903;
+  }
+  
+  #zirconium {
+    grid-column: 4 / span 1;
+    grid-row: 5 / span 1;
+    background-color: #adf903;
+  }
+  
+  #niobium {
+    grid-column: 5 / span 1;
+    grid-row: 5 / span 1;
+    background-color: #adf903;
+  }
+  
+  #molybdenum {
+    grid-column: 6 / span 1;
+    grid-row: 5 / span 1;
+    background-color: #adf903;
+  }
+  
+  #technetium {
+    grid-column: 7 / span 1;
+    grid-row: 5 / span 1;
+    background-color: #adf903;
+  }
+  
+  #ruthenium {
+    grid-column: 8 / span 1;
+    grid-row: 5 / span 1;
+    background-color: #adf903;
+  }
+  
+  #rhodium {
+    grid-column: 9 / span 1;
+    grid-row: 5 / span 1;
+    background-color: #adf903;
+  }
+  
+  #palladium {
+    grid-column: 10 / span 1;
+    grid-row: 5 / span 1;
+    background-color: #adf903;
+  }
+  
+  #silver {
+    grid-column: 11 / span 1;
+    grid-row: 5 / span 1;
+    background-color: #adf903;
+  }
+  
+  #cadmium {
+    grid-column: 12 / span 1;
+    grid-row: 5 / span 1;
+    background-color: #adf903;
+  }
+  
+  #indium {
+    grid-column: 13 / span 1;
+    grid-row: 5 / span 1;
+    background-color:  #fdfd03;
+  }
+  
+  #tin {
+    grid-column: 14 / span 1;
+    grid-row: 5 / span 1;
+    background-color:  #fdfd03;
+  }
+  
+  #antimony {
+    grid-column: 15 / span 1;
+    grid-row: 5 / span 1;
+    background-color:  #04ff00;
+  }
+  
+  #tellurium {
+    grid-column: 16 / span 1;
+    grid-row: 5 / span ;
+    background-color:  #04ff00;
+  }
+  
+  #iodine {
+    grid-column: 17 / span 1;
+    grid-row: 5 / span 1;
+    background-color:  #fa4bf5;
+  }
+  
+  #xenon {
+    grid-column: 18 / span 1;
+    grid-row: 5 / span 1;
+    background-color: #04f9f0;
+  }
+  
+  /* Cs a Fr 
+  cesio*/
+  #cesium {
+    grid-column: 1 / span 1;
+    grid-row: 6 / span 1;
+    background-color:  #ff7c00;
+  }
+  
+  /*bario*/
+  #barium {
+    grid-column: 2 / span 1;
+    grid-row: 6 / span 1;
+    background-color: hwb(50 14% 2%);
+  }
+  
+  #lanthanum {
+    grid-column: 3 / span 1;
+    grid-row: 6 / span 1;
+  }
+  
+  #cerium {
+    grid-column: 3 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #praseodymium {
+    grid-column: 4 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #neodymium {
+    grid-column: 5 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #promethium {
+    grid-column: 6 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #samarium {
+    grid-column: 7 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #europium {
+    grid-column: 8 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #gadolinium {
+    grid-column: 9 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #terbium {
+    grid-column: 10 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #dysprosium {
+    grid-column: 11 / span 1;
+    grid-row:11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #holmium {
+    grid-column: 12 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #erbium {
+    grid-column: 13 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #thulium {
+    grid-column: 14 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #ytterbium {
+    grid-column: 15 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  #lutetium {
+    grid-column: 16 / span 1;
+    grid-row: 11 / span 1;
+    background-color: #04f98a;
+  }
+  
+  /* Hf a Rn */
+  #hafnium {
+    grid-column: 4 / span 1;
+    grid-row: 6 / span 1;
+    background-color: #adf903;
+  }
+  
+  #tantalum {
+    grid-column: 5 / span 1;
+    grid-row: 6 / span 1;
+    background-color: #adf903;
+  }
+  
+  #wolfram {
+    grid-column: 6 / span 1;
+    grid-row: 6 / span 1;
+    background-color: #adf903;
+  }
+  
+  #rhenium {
+    grid-column: 7 / span 1;
+    grid-row: 6 / span 1;
+    background-color: #adf903;
+  }
+  
+  #osmium {
+    grid-column: 8 / span 1;
+    grid-row: 6 / span 1;
+    background-color: #adf903;
+  }
+  
+  #iridium {
+    grid-column: 9 / span 1;
+    grid-row: 6 / span 1;
+    background-color: #adf903;
+  }
+  
+  #platinum {
+    grid-column: 10 / span 1;
+    grid-row: 6 / span 1;
+    background-color: #adf903;
+  }
+  
+  #gold {
+    grid-column: 11 / span 1;
+    grid-row: 6 / span 1;
+    background-color: #adf903;
+  }
+  
+  #mercury {
+    grid-column: 12 / span 1;
+    grid-row: 6 / span 1;
+    background-color: #adf903;
+  }
+  
+  #thallium {
+    grid-column: 13 / span 1;
+    grid-row: 6 / span 1;
+    background-color:  #fdfd03;
+  }
+  
+  #lead {
+    grid-column: 14 / span 1;
+    grid-row: 6 / span 1;
+    background-color:  #fdfd03;
+  }
+  
+  #bismuth {
+    grid-column: 15 / span 1;
+    grid-row: 6 / span 1;
+    background-color:  #fdfd03;
+  }
+  
+  #polonium {
+    grid-column: 16 / span 1;
+    grid-row: 6 / span 1;
+    background-color:  #04ff00;
+  }
+  
+  #astatine {
+    grid-column: 17 / span 1;
+    grid-row: 6 / span 1;
+    background-color:  #fa4bf5;
+  }
+  
+  #radon {
+    grid-column: 18 / span 1;
+    grid-row: 6 / span 1;
+    background-color: #04f9f0;
+  }
+  
+  /* Fr a U 
+  francio*/
+  #francium {
+    grid-column: 1 / span 1;
+    grid-row: 7 / span 1;
+    background-color:  #ff7c00;
+  }
+  /*radio*/
+  #radium {
+    grid-column: 2 / span 1;
+    grid-row: 7 / span 1;
+    background-color: hwb(50 14% 2%);
+  }
+  
+  #actinium {
+    grid-column: 3 / span 1;
+    grid-row: 7 / span 1;
+  }
+  
+  #thorium {
+    grid-column: 3 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #protactinium {
+    grid-column: 4 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #uranium {
+    grid-column: 5 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #neptunium {
+    grid-column: 6 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #plutonium {
+    grid-column: 7 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #americium {
+    grid-column: 8 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #curium {
+    grid-column: 9 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #berkelium {
+    grid-column: 10 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #californium {
+    grid-column: 11 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #einsteinium {
+    grid-column: 12 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #fermium {
+    grid-column: 13 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #mendelevium {
+    grid-column: 14 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #nobelium {
+    grid-column: 15 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  #lawrencium {
+    grid-column: 16 / span 1;
+    grid-row: 12 / span 1;
+    background-color:  #03aa68;
+  }
+  
+  /* Ku a On */
+  #rutherfordium {
+    grid-column: 4 / span 1;
+    grid-row: 7 / span 1;
+    
+  }
+  
+  #hahnio {
+    grid-column: 5 / span 1;
+    grid-row: 7 / span 1;
+    
+  }
+  
+  #antidilio {
+    grid-column: 6 / span 1;
+    grid-row: 7 / span 1;
+    
+  }
+  
+  #gerphanio {
+    grid-column: 7 / span 1;
+    grid-row: 7 / span 1;
+    
+  }
+  
+  #horkaichi {
+    grid-column: 8 / span 1;
+    grid-row: 7 / span 1;
+    
+  }
+  
+  #wolachakio {
+    grid-column: 9 / span 1;
+    grid-row: 7 / span 1;
+    
+  }
+  
+  #madveded {
+    grid-column: 10 / span 1;
+    grid-row: 7 / span 1;
+     
+
+  }
+  
+  #plutirio {
+    grid-column: 11 / span 1;
+    grid-row: 7 / span 1;
+    
+  }
+  
+  #darwanzio {
+    grid-column: 12 / span 1;
+    grid-row: 7 / span 1;
+    
+  }
+  
+  #tusfrano {
+    grid-column: 13 / span 1;
+    grid-row: 7 / span 1;
+  }
+  
+  #erristeneo {
+    grid-column: 14 / span 1;
+    grid-row: 7 / span 1;
+    
+  }
+  
+  #merchel {
+    grid-column: 15 / span 1;
+    grid-row: 7 / span 1;
+  }
+  
+  #nectarten {
+    grid-column: 16 / span 1;
+    grid-row: 7 / span 1;
+  }
+  
+  #efelio {
+    grid-column: 17 / span 1;
+    grid-row: 7 / span 1;
+  }
+  
+  #oberon {
+    grid-column: 18 / span 1;
+    grid-row: 7 / span 1;
+  }
+
+  #espacios{
+    grid-column: 6 / span 1;
+    grid-row: 10 / span 1;
+    color:transparent;
+    background-color:transparent; 
+    border: 1px solid transparent;
+  }
+  
